@@ -1,0 +1,8 @@
+<h2>Список услуг</h2>
+<ul class="orderItems">
+  <li *ngFor="let orderItem of orderItems">
+      <span class="title">{{orderItem.title}}</span>
+      <button (click)="onDelete(orderItem)" class="delete">x</button>
+      <span class="price">{{orderItem.price}}</span>
+  </li>
+</ul>
