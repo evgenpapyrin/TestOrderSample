@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OrderItem } from '../order-item';
 
 @Component({
@@ -8,18 +8,20 @@ import { OrderItem } from '../order-item';
 })
 export class OrderItemsComponent implements OnInit {
 
-  @Input() orderItems : OrderItem[];
+  @Input() orderItems: OrderItem[];
+  @Output() orderItemDelete = new EventEmitter<number>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onDelete(item:OrderItem): void{
-    const index = this.orderItems.indexOf(item, 0);
-    if (index > -1) {
-      this.orderItems.splice(index, 1);
-    }
+  onDelete(id: number): void {
+    this.orderItemDelete.emit(id);
+  }
+
+  isAvailable(orderItem: OrderItem): boolean {
+    return orderItem.status === 'Available';
   }
 
 }

@@ -9,18 +9,20 @@ import { OrderItem } from '../order-item';
 })
 export class OrderComponent implements OnInit {
 
-  orderItems : OrderItem[];
+  public orderItems: OrderItem[];
 
-
-
-  constructor(private orderService:OrderService) { }
+  constructor(private orderService: OrderService) { }
 
   ngOnInit() {
     this.getOrderItems();
   }
 
-  getOrderItems(): void {
+  private getOrderItems(): void {
      this.orderService.getItems().subscribe(items => this.orderItems = items);
+  }
+
+  public deleteOrderItem(id: number): void {
+    this.orderItems = this.orderItems.filter(item => item.id !== id);
   }
 
 }

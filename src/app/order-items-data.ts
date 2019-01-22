@@ -1,6 +1,6 @@
-import { OrderItem } from "./order-item"
+import { OrderItem } from './order-item';
 
-export const ORDER_ITEMS_DATA : OrderItem[] = [{
+export const ORDER_ITEMS_DATA: OrderItem[] = [{
     id: 1,
     title: 'Анализ крови',
     description: '',

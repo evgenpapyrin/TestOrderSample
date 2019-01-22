@@ -1,22 +1,39 @@
 ul {
     list-style-type: none;
   }
-.orderItems li {
+  .order-item-available {
     position: relative;
     left: 0;
-    background-color: #EEE;
+    border: 2px solid black;
     margin: .5em;
     padding: .3em 0;
     height: 1.6em;
     border-radius: 4px;
     text-align: center;
-  }
+}
+.order-item-unavailable {
+    position: relative;
+    left: 0;
+    border: 1px solid red;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+    text-align: center;
+}
 .delete { 
-    float:right
+    float:right;
+    align-items: center;
+    margin: .10em;
+    font-size: 13px;
 }
 .price { 
-    float:right
+    float:right;
+    padding: .10em;
+    text-align: center;
 }
 .title {
-     float:left
+     float:left;
+     padding: .10em;
+     text-align: center;
 }

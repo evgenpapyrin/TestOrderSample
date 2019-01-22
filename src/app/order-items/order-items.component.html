@@ -1,8 +1,12 @@
 <h2>Список услуг</h2>
-<ul class="orderItems">
+<ul>
   <li *ngFor="let orderItem of orderItems">
+    <div [ngClass]="{ 
+      'order-item-available': isAvailable(orderItem), 
+      'order-item-unavailable' : !isAvailable(orderItem)}">
       <span class="title">{{orderItem.title}}</span>
-      <button (click)="onDelete(orderItem)" class="delete">x</button>
-      <span class="price">{{orderItem.price}}</span>
+      <button (click)="onDelete(orderItem.id)" class="delete">x</button>
+      <span class="price">{{orderItem.price}} Р</span>
+    </div>
   </li>
 </ul>

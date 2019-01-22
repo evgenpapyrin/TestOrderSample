@@ -1,3 +1,11 @@
-<div id="order-items">
-    <app-order-items [orderItems]=orderItems></app-order-items>
-</div>
+    <div class="container order-items">
+        <app-order-items 
+            [orderItems]="orderItems"
+            (orderItemDelete)="deleteOrderItem($event)"
+        >
+        </app-order-items>
+    </div>
+    <div class="container order-info">
+        <app-order-info [orderItems]="orderItems">
+        </app-order-info>
+    </div>    
